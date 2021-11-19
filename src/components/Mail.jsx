@@ -27,7 +27,7 @@ function Mail() {
         <div className="mail__toolsLeft">
           <IconButton
             onClick={() => {
-              history.push("/");
+              history.push("/inbox");
             }}
           >
             <ArrowBack />

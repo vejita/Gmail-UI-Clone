@@ -13,24 +13,26 @@ import Login from "./components/Login";
 function App() {
   const sendMessagesIsOpen = useSelector(selectSendMessageIsOpen);
   return (
-    <Login />
-    // <Router>
-    //   <div className="App">
-    //     <Header />
-    //     <div className="App__body">
-    //       <SideBar />
-    //       <Switch>
-    //         <Route path="/mail" exact>
-    //           <Mail />
-    //         </Route>
-    //         <Route path="/" exact>
-    //           <EmailList />
-    //         </Route>
-    //       </Switch>
-    //     </div>
-    //     {sendMessagesIsOpen && <SendMail />}
-    //   </div>
-    // </Router>
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="App__body">
+          <SideBar />
+          <Switch>
+            <Route path="/mail" exact>
+              <Mail />
+            </Route>
+            <Route path="/inbox" exact>
+              <EmailList />
+            </Route>
+            <Route path="/" exact>
+              <Login />
+            </Route>
+          </Switch>
+        </div>
+        {sendMessagesIsOpen && <SendMail />}
+      </div>
+    </Router>
   );
 }
 
